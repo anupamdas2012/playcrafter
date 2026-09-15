@@ -3,6 +3,7 @@ name: Deploy landing page to GitHub Pages
 on:
   push:
     branches:
+      - main
       - playcrafter-landing-page
   workflow_dispatch:
 
