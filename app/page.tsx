@@ -9,16 +9,11 @@ export default function Page() {
 
       <section className="px-4 md:px-6 pt-6 md:pt-10 pb-8">
         <div className="max-w-page mx-auto text-center flex flex-col items-center gap-4 mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-white px-3 py-1 font-sans text-xs font-bold shadow-playSm">
-            <span className="w-2 h-2 rounded-full bg-pink" />
-            for kids 5–12 · no coding needed
-          </span>
           <h1 className="font-sans font-extrabold text-4xl md:text-6xl leading-[1.05] max-w-3xl">
             Kids invent games <br className="hidden md:block" />
             with their <span className="italic-serif text-blue">voice</span>.
           </h1>
           <p className="font-sans text-ink2 text-lg md:text-xl max-w-xl">
-            Say an idea. Get a game. Then say what to change — and it changes.
             Kids practice creative thinking and problem-solving while building
             something they actually get to play.
           </p>
@@ -42,7 +37,6 @@ export default function Page() {
         </div>
       </section>
 
-      <HowItWorks />
       <Showcase />
       <WhyItsGood />
       <FinalCTA />
@@ -89,77 +83,14 @@ function NavBar() {
   );
 }
 
-function HowItWorks() {
-  const steps = [
-    {
-      emoji: "🎤",
-      title: "Say the idea",
-      body: "Kid taps the mic and describes anything — a fire-breathing pancake, a race between snails on the moon. No wrong answers.",
-      tint: "bg-pink",
-    },
-    {
-      emoji: "✏️",
-      title: "Sparky designs it",
-      body: "Our AI turns the idea into a real game plan — characters, world, goals, controls — and shows the kid what it made.",
-      tint: "bg-yellow",
-    },
-    {
-      emoji: "🎮",
-      title: "Play & tinker",
-      body: "The game actually runs. Something not right? Tap the mic again: “make the boss bigger,” “add ice powers” — the game updates.",
-      tint: "bg-mint",
-    },
-  ];
-  return (
-    <section className="px-4 md:px-6 py-16 bg-bg2/60 border-y-4 border-ink">
-      <div className="max-w-page mx-auto">
-        <div className="text-center mb-10">
-          <div className="inline-block text-xs font-sans font-bold tracking-wider text-ink2 mb-2">
-            HOW IT WORKS
-          </div>
-          <h2 className="font-sans font-extrabold text-3xl md:text-4xl">
-            Three steps. <span className="italic-serif text-blue">Zero</span> coding.
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-5">
-          {steps.map((s, i) => (
-            <div
-              key={i}
-              className="rounded-chunk border-4 border-ink bg-white shadow-play p-6 flex flex-col gap-3"
-            >
-              <div
-                className={`w-14 h-14 rounded-full border-4 border-ink shadow-playSm flex items-center justify-center text-2xl ${s.tint}`}
-              >
-                {s.emoji}
-              </div>
-              <div className="font-sans font-extrabold text-xl">
-                {i + 1}. {s.title}
-              </div>
-              <p className="font-sans text-ink2">{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Showcase() {
   return (
     <section id="showcase" className="px-4 md:px-6 py-16">
       <div className="max-w-page mx-auto">
-        <div className="text-center mb-4">
-          <div className="inline-block text-xs font-sans font-bold tracking-wider text-ink2 mb-2">
-            SHARE · PLAY · REMIX
-          </div>
-          <h2 className="font-sans font-extrabold text-3xl md:text-4xl">
-            Every kid&apos;s game is a <span className="italic-serif text-pink">starting point</span>.
+        <div className="text-center mb-2">
+          <h2 className="font-sans font-extrabold text-3xl md:text-4xl leading-tight">
+            Made by your kid. <span className="italic-serif text-pink">Remixed</span> by their friends.
           </h2>
-          <p className="font-sans text-ink2 mt-3 max-w-xl mx-auto">
-            Kids share their games with a link. Friends play them, then <em className="italic-serif not-italic">remix</em> them —
-            &ldquo;make the shark rainbow,&rdquo; &ldquo;add a boss at the end&rdquo; — and pass a new version along. Every game is a
-            seed for the next one.
-          </p>
         </div>
 
         <RemixFlow />
@@ -260,52 +191,23 @@ function Showcase() {
 
 function RemixFlow() {
   const steps = [
-    {
-      tint: "bg-blue-soft",
-      emoji: "🔗",
-      title: "Share",
-      body: "One tap → a link. Send it to a friend or your class.",
-    },
-    {
-      tint: "bg-pink/40",
-      emoji: "▶",
-      title: "Play",
-      body: "Friends play in the browser. No download, no account.",
-    },
-    {
-      tint: "bg-yellow-soft",
-      emoji: "🎨",
-      title: "Remix",
-      body: "&ldquo;Make the boss bigger.&rdquo; &ldquo;Add a rainbow trail.&rdquo; Their version, saved as a fork.",
-    },
-    {
-      tint: "bg-mint",
-      emoji: "🌱",
-      title: "Reimagine",
-      body: "Every remix inspires the next one. The idea keeps growing.",
-    },
+    { emoji: "🔗", label: "Share", tint: "bg-blue-soft" },
+    { emoji: "▶", label: "Play", tint: "bg-pink/40" },
+    { emoji: "🎨", label: "Remix", tint: "bg-yellow-soft" },
+    { emoji: "🌱", label: "Reimagine", tint: "bg-mint" },
   ];
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 my-8">
+    <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 my-8">
       {steps.map((s, i) => (
-        <div
-          key={i}
-          className="relative rounded-chunkSm border-4 border-ink bg-white shadow-playSm p-4 flex flex-col items-start gap-2"
-        >
-          <div
-            className={`w-10 h-10 rounded-full border-2 border-ink flex items-center justify-center text-lg ${s.tint}`}
+        <div key={i} className="flex items-center gap-2 md:gap-3">
+          <span
+            className={`inline-flex items-center gap-2 rounded-full border-[3px] border-ink px-3 py-1.5 font-sans font-extrabold text-sm md:text-base shadow-playSm ${s.tint}`}
           >
-            {s.emoji}
-          </div>
-          <div className="font-sans font-extrabold text-base">{s.title}</div>
-          <p
-            className="font-sans text-sm text-ink2 leading-snug"
-            dangerouslySetInnerHTML={{ __html: s.body }}
-          />
+            <span className="text-base">{s.emoji}</span>
+            {s.label}
+          </span>
           {i < steps.length - 1 && (
-            <span className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-2xl font-extrabold text-ink z-10">
-              →
-            </span>
+            <span className="text-xl font-extrabold text-ink">→</span>
           )}
         </div>
       ))}
@@ -314,66 +216,17 @@ function RemixFlow() {
 }
 
 function WhyItsGood() {
-  const bullets = [
-    {
-      emoji: "🧠",
-      title: "Creative confidence",
-      body: "Kids see their imagination become real in seconds. That loop — think it, see it, tweak it — builds the muscle of ‘I can make things.’",
-    },
-    {
-      emoji: "🧩",
-      title: "Problem-solving in disguise",
-      body: "The boss too hard? Level too short? Kids diagnose what’s wrong and describe a fix. That’s debugging — they just don’t know it yet.",
-    },
-    {
-      emoji: "🗣️",
-      title: "Language & articulation",
-      body: "To make the game they want, kids have to describe it precisely. Vague ideas become specific goals, characters, and rules.",
-    },
-    {
-      emoji: "🛡️",
-      title: "Safe by design",
-      body: "No open chat, no strangers, no ads. Just a mic, an AI helper, and games your kid actually built.",
-    },
-  ];
   return (
     <section id="why" className="px-4 md:px-6 py-16 border-t-4 border-ink bg-bg2/60">
-      <div className="max-w-page mx-auto grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <div className="text-xs font-sans font-bold tracking-wider text-ink2 mb-2">
-            FOR PARENTS
-          </div>
-          <h2 className="font-sans font-extrabold text-3xl md:text-4xl leading-tight mb-4">
-            Screen time that <span className="italic-serif text-blue">makes</span> something.
-          </h2>
-          <p className="font-sans text-ink2 text-lg">
-            Playcrafter turns the tablet from a place kids consume into a place they create.
-            Every session ends with a game they invented — not a scroll session they can’t remember.
-          </p>
-          <div className="mt-6 rounded-chunk border-4 border-ink bg-white shadow-playSm p-5">
-            <div className="italic-serif text-lg text-ink leading-snug">
-              &ldquo;My daughter used to ask for YouTube. Now she asks to ‘make a game where the octopus fights broccoli.’
-              It&apos;s the first app I&apos;ve been genuinely happy to hand over.&rdquo;
-            </div>
-            <div className="mt-2 font-sans text-sm text-ink2">— Alicia R., parent of a 7-year-old</div>
-          </div>
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 className="font-sans font-extrabold text-4xl md:text-6xl leading-[1.05] mb-6">
+          Not screen time.<br />
+          <span className="italic-serif text-blue">Make-time.</span>
+        </h2>
+        <div className="italic-serif text-xl md:text-2xl text-ink leading-snug">
+          &ldquo;I limit games. Making one is different — she&apos;s inventing, not zoning out.&rdquo;
         </div>
-        <div className="grid gap-4">
-          {bullets.map((b, i) => (
-            <div
-              key={i}
-              className="rounded-chunk border-4 border-ink bg-white shadow-playSm p-5 flex gap-4"
-            >
-              <div className="w-12 h-12 shrink-0 rounded-full border-4 border-ink bg-yellow-soft flex items-center justify-center text-2xl">
-                {b.emoji}
-              </div>
-              <div>
-                <div className="font-sans font-extrabold text-lg">{b.title}</div>
-                <p className="font-sans text-ink2">{b.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className="mt-2 font-sans text-sm text-ink2">— Alicia R., parent of a 7-year-old</div>
       </div>
     </section>
   );
@@ -427,9 +280,9 @@ function Footer() {
             <span className="text-ink2">.ai</span>
           </span>
         </div>
-        <div className="font-sans text-sm text-ink2">
-          Built for curious kids · © {new Date().getFullYear()}
-        </div>
+        <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-mint px-3 py-1 font-sans text-xs font-extrabold shadow-playSm">
+          🛡️ Safe by design — no chat, no strangers, no ads
+        </span>
         <div className="flex items-center gap-4 font-sans text-sm text-ink2">
           <Link href="#" className="hover:text-ink">privacy</Link>
           <Link href="#" className="hover:text-ink">for schools</Link>

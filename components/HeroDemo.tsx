@@ -150,7 +150,7 @@ export function HeroDemo() {
   return (
     <div className="relative">
       {/* Step pills. */}
-      <div className="hidden md:grid grid-cols-3 gap-4 mb-3 max-w-page mx-auto px-2">
+      <div className="hidden md:grid grid-cols-3 gap-6 mb-5 max-w-page mx-auto px-2">
         <StepLabel n={1} label="Say it out loud" active={stepActive === 1} />
         <StepLabel n={2} label="Play it" active={stepActive === 2} />
         <StepLabel n={3} label="Change it — just talk" active={stepActive === 3} />
@@ -158,8 +158,8 @@ export function HeroDemo() {
 
       <div className="relative w-full max-w-page mx-auto rounded-chunk border-4 border-ink bg-white shadow-play overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-[460px]">
-          {/* LEFT: kid talking to the mic. */}
-          <div className="relative p-6 md:p-8 border-b-4 md:border-b-0 md:border-r-4 border-ink bg-bg2">
+          {/* LEFT (desktop) / BOTTOM (mobile): kid talking to the mic. */}
+          <div className="relative p-6 md:p-8 order-2 md:order-1 md:border-r-4 border-ink bg-bg2">
             <span className="absolute top-4 right-4 text-[10px] font-sans font-bold tracking-wider text-ink2">
               {isRefine ? "KID SAYS A CHANGE" : "KID SPEAKS"}
             </span>
@@ -208,8 +208,8 @@ export function HeroDemo() {
             </div>
           </div>
 
-          {/* RIGHT: what you get. */}
-          <div className="relative p-6 md:p-8 bg-white">
+          {/* RIGHT (desktop) / TOP (mobile): what you get. */}
+          <div className="relative p-6 md:p-8 order-1 md:order-2 border-b-4 md:border-b-0 border-ink bg-white">
             <span className="absolute top-4 right-4 text-[10px] font-sans font-bold tracking-wider text-ink2">
               {phase === "refineReady"
                 ? "GAME UPDATED"
@@ -320,14 +320,14 @@ export function HeroDemo() {
 function StepLabel({ n, label, active }: { n: number; label: string; active: boolean }) {
   return (
     <div
-      className={`flex items-center gap-2 font-sans text-sm transition-colors ${active ? "text-ink" : "text-ink2"}`}
+      className={`flex items-center justify-center gap-3 font-sans transition-all ${active ? "text-ink scale-105" : "text-ink2/70"}`}
     >
       <span
-        className={`inline-flex items-center justify-center w-6 h-6 rounded-full border-2 border-ink text-xs font-extrabold ${active ? "bg-yellow" : "bg-white"}`}
+        className={`inline-flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-ink text-lg font-extrabold shadow-playSm ${active ? "bg-yellow" : "bg-white"}`}
       >
         {n}
       </span>
-      <span className="font-bold">{label}</span>
+      <span className="font-extrabold text-lg md:text-xl tracking-tight">{label}</span>
     </div>
   );
 }
