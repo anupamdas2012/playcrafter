@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "playcrafter.ai — kids invent games with their voice",
+  title: "playcrafter.ai — kids build games with their voice",
   description:
     "Tell a game idea, get a game. Playcrafter helps kids think creatively and problem-solve while making games they actually get to play.",
 };

@@ -157,9 +157,9 @@ export function HeroDemo() {
       </div>
 
       <div className="relative w-full max-w-page mx-auto rounded-chunk border-4 border-ink bg-white shadow-play overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[460px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[460px]">
           {/* LEFT (desktop) / BOTTOM (mobile): kid talking to the mic. */}
-          <div className="relative p-6 md:p-8 order-2 md:order-1 md:border-r-4 border-ink bg-bg2">
+          <div className="relative p-4 md:p-8 order-2 md:order-1 md:border-r-4 border-ink bg-bg2 h-[220px] md:h-auto">
             <span className="absolute top-4 right-4 text-[10px] font-sans font-bold tracking-wider text-ink2">
               {isRefine ? "KID SAYS A CHANGE" : "KID SPEAKS"}
             </span>
@@ -167,10 +167,10 @@ export function HeroDemo() {
             <span className="absolute bottom-8 left-10 w-4 h-4 rounded-full bg-mint" />
             <span className="absolute bottom-6 right-6 w-3 h-3 rounded-full bg-yellow" />
 
-            <div className="h-full flex flex-col items-center justify-center gap-6 text-center">
+            <div className="h-full flex flex-col items-center justify-center gap-3 md:gap-6 text-center">
               <MicPuck phase={phase} />
 
-              <div className="min-h-[6rem] max-w-sm">
+              <div className="min-h-[3rem] md:min-h-[6rem] max-w-sm">
                 <AnimatePresence mode="wait">
                   {phase === "idle" && (
                     <motion.div
@@ -189,7 +189,7 @@ export function HeroDemo() {
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
-                      className="italic-serif text-2xl leading-snug text-ink"
+                      className="italic-serif text-base md:text-2xl leading-snug text-ink"
                     >
                       &ldquo;
                       {phase === "listening" || phase === "refineListening"
@@ -209,7 +209,7 @@ export function HeroDemo() {
           </div>
 
           {/* RIGHT (desktop) / TOP (mobile): what you get. */}
-          <div className="relative p-6 md:p-8 order-1 md:order-2 border-b-4 md:border-b-0 border-ink bg-white">
+          <div className="relative p-4 md:p-8 order-1 md:order-2 border-b-4 md:border-b-0 border-ink bg-white h-[280px] md:h-auto overflow-hidden">
             <span className="absolute top-4 right-4 text-[10px] font-sans font-bold tracking-wider text-ink2">
               {phase === "refineReady"
                 ? "GAME UPDATED"
@@ -344,7 +344,7 @@ function MicPuck({ phase }: { phase: Phase }) {
         </>
       )}
       <div
-        className={`relative w-24 h-24 rounded-full border-4 border-ink shadow-play flex items-center justify-center text-4xl ${
+        className={`relative w-16 h-16 md:w-24 md:h-24 rounded-full border-[3px] md:border-4 border-ink shadow-playSm md:shadow-play flex items-center justify-center text-2xl md:text-4xl ${
           listening ? "bg-pink animate-breathe" : thinking ? "bg-yellow" : "bg-white"
         }`}
       >

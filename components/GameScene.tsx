@@ -7,7 +7,7 @@ type Kind = "shark-pizza" | "cat-castle" | "robot-lava";
 export function GameScene({ kind, refined = false }: { kind: Kind; refined?: boolean }) {
   return (
     <div
-      className="w-full max-w-md aspect-[16/10] rounded-chunkSm border-4 border-ink overflow-hidden relative tile-grid"
+      className="w-full max-w-[240px] md:max-w-md aspect-[16/10] rounded-chunkSm border-[3px] md:border-4 border-ink overflow-hidden relative tile-grid"
       style={{ background: sceneBg(kind) }}
     >
       {kind === "shark-pizza" && <SharkPizza refined={refined} />}

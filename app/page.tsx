@@ -10,7 +10,7 @@ export default function Page() {
       <section className="px-4 md:px-6 pt-6 md:pt-10 pb-8">
         <div className="max-w-page mx-auto text-center flex flex-col items-center gap-4 mb-8">
           <h1 className="font-sans font-extrabold text-4xl md:text-6xl leading-[1.05] max-w-3xl">
-            Kids invent games <br className="hidden md:block" />
+            Kids build games <br className="hidden md:block" />
             with their <span className="italic-serif text-blue">voice</span>.
           </h1>
           <p className="font-sans text-ink2 text-lg md:text-xl max-w-xl">
@@ -221,10 +221,10 @@ function WhyItsGood() {
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="font-sans font-extrabold text-4xl md:text-6xl leading-[1.05] mb-6">
           Not screen time.<br />
-          <span className="italic-serif text-blue">Make-time.</span>
+          <span className="italic-serif text-blue">Build-time.</span>
         </h2>
         <div className="italic-serif text-xl md:text-2xl text-ink leading-snug">
-          &ldquo;I limit games. Making one is different — she&apos;s inventing, not zoning out.&rdquo;
+          &ldquo;I limit games. Building one is different — she&apos;s building, not zoning out.&rdquo;
         </div>
         <div className="mt-2 font-sans text-sm text-ink2">— Alicia R., parent of a 7-year-old</div>
       </div>
@@ -243,7 +243,7 @@ function FinalCTA() {
 
         <div className="text-6xl mb-4 animate-wiggle inline-block">✨</div>
         <h2 className="font-sans font-extrabold text-3xl md:text-5xl max-w-2xl mx-auto leading-tight">
-          What will your kid <span className="italic-serif">invent</span> today?
+          What will your kid <span className="italic-serif">build</span> today?
         </h2>
         <p className="font-sans text-ink2 mt-3 max-w-lg mx-auto">
           Free to try. Works in the browser. No account needed to make your first game.
