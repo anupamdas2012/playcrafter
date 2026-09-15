@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap");
+
+:root {
+  --bg: #fbf7ef;
+  --bg-2: #f4eee0;
+  --ink: #1a1a1a;
+  --ink-2: #4a4a4a;
+  --yellow: #f5c518;
+  --yellow-soft: #fde585;
+  --blue: #3ba7e8;
+  --blue-soft: #c7e7f8;
+  --pink: #ff8fa3;
+  --mint: #b8e6c1;
+  --dark: #0f172a;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1000px 700px at 15% -10%, rgba(59, 167, 232, 0.18) 0%, transparent 60%),
+    radial-gradient(900px 700px at 100% 100%, rgba(255, 143, 163, 0.20) 0%, transparent 55%),
+    radial-gradient(700px 500px at 85% -5%, rgba(245, 197, 24, 0.25) 0%, transparent 60%),
+    var(--bg);
+}
+
+.italic-serif {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Faint dotted grid inside game-tile "screenshots" to imply a game world. */
+.tile-grid {
+  background-image:
+    radial-gradient(rgba(26, 26, 26, 0.14) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
