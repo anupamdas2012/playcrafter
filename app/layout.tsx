@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "playcrafter.ai — kids build games with their voice",
+  title: "playcrafter.ai — every kid has a world inside them",
   description:
-    "Tell a game idea, get a game. Playcrafter helps kids think creatively and problem-solve while making games they actually get to play.",
+    "Speak a world into being. Playcrafter turns the adventures kids dream up into playable worlds — so they practice creative thinking and problem-solving while building.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F5C518",
+  themeColor: "#4a9fe0",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
